@@ -48,7 +48,6 @@ public class UsersService {
         try{
             Users existingUser = repository.findById(users.getId()).orElse(null);
 
-            assert existingUser != null;
             existingUser.setName((users.getName()));
             return repository.save(existingUser);
 

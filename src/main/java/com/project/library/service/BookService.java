@@ -27,4 +27,22 @@ public class BookService {
     public  long countBook(){
         return repository.count();
     }
+
+    public void decreaseBookQuantity(Long bookId) {
+        Book book = repository.findById(bookId).orElseThrow(() -> new RuntimeException("Kitap bulunamadı."));
+        int currentQuantity = Math.toIntExact(book.getQuantity());
+        if (currentQuantity == 0L) {
+            throw new RuntimeException("Stok miktarı zaten sıfır.");
+        }
+        book.setQuantity(currentQuantity - 1);
+        repository.save(book);
+    }
+
+    public void increaseBookQuantity(Long bookId) {
+        Book book = repository.findById(bookId).orElseThrow(() -> new RuntimeException("Kitap bulunamadı."));
+        int currentQuantity = Math.toIntExact(book.getQuantity());
+        book.setQuantity(currentQuantity + 1);
+        repository.save(book);
+    }
+
 }
