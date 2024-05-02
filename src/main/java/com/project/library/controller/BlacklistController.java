@@ -20,7 +20,7 @@ public class BlacklistController {
 
 
     @PostMapping("/blacklist/add/{userId}")
-    public Blacklist addBook(@PathVariable long userId){
+    public Blacklist addBlacklist(@PathVariable long userId){
         System.out.println(userId);
         return service.addBlackList(userId);
     }
