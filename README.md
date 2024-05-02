@@ -1,5 +1,5 @@
 # Project DOC.
-
+proje 9191 portunda ayağa kalkmaktadır.
 
 ### Uygulamada olması gereken nesneler
 :heavy_check_mark: Kullanıcı 
